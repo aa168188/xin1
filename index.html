@@ -1,0 +1,1442 @@
+﻿<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手盒子 - 热门游戏Mod工具&创作者平台</title>
+    <meta name="description" content="新手盒子：海量游戏资源·一键安装，集Mod整合包下载、模组管理、云存档于一体的单机游戏Mod平台">
+
+    <!-- 公共样式开始 -->
+    <link rel="Shortcut Icon" href="//www.ijinshan.com/favicon.ico">
+    <style>
+        blockquote,body,button,code,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+        body,button,input,select,textarea{font:16px/1.5 Tahoma,Arial,SimSun;font-family:"Microsoft YaHei"}
+        button,input,select,textarea{font-size:100%}
+        h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+        ol,ul{list-style:none}
+        em,i,strong{font-style:normal;font-weight:400}
+        fieldset,img{border:0}
+        table{border-collapse:collapse;border-spacing:0}
+        body,html{width:100%;height:100%;color:#333}
+        a{text-decoration:none;color:inherit}
+        a:hover{text-decoration:none}
+        .clear{clear:both}
+        .clearfix:after{content:"​";display:block;height:0;clear:both}
+        .left{float:left}
+        .right{float:right}
+    </style>
+    <!-- 公共样式结束 -->
+        <style>
+:root {
+    --primary-color: #06b6d4; /* Cyan */
+    --secondary-color: #3b82f6; /* Blue */
+    --text-color: #1F2937; /* Dark gray */
+    --text-secondary: #374151; /* Medium gray */
+    --text-tertiary: #6B7280; /* Light gray */
+    --light-gray: #F9FAFB; /* Very light gray */
+    --border-color: #06b6d4; /* Cyan */
+    --base-font-size: 16px; /* 基础字号 */
+    --accent-color: #0891b2; /* Dark Cyan */
+    --dark-bg: #0B0E14; /* Dark Gaming Black */
+    --download-btn-primary: #06b6d4; /* Cyan */
+    --download-btn-secondary: #3b82f6; /* Blue */
+    --download-btn-shadow-primary: rgba(6, 182, 212, 0.4);
+    --download-btn-shadow-hover: rgba(6, 182, 212, 0.6);
+    --orange-accent: #F59E0B; /* Gaming Orange */
+    --success-color: #10B981; /* Green */
+    --warning-color: #F59E0B; /* Yellow */
+    --error-color: #EF4444; /* Red */
+    --secondary-btn-color: #475569; /* Slate Gray */
+}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text-color);line-height:1.6;font-size:var(--base-font-size)}
+.hero {
+    min-height: 90vh;
+    background-color: #0B0E14; /* 参考图的深黑背景 */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px; /* 精细网格 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.9); /* 强烈的暗角 */
+}
+
+/* 顶部氛围光 - 模拟参考图的顶部光感 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 动态扫描线 - 增强科技感 */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(0,0,0,0) 100%);
+    background-size: 100% 10px;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+
+/* 背景动效样式 - 动态壁纸主题 */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 25%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 75%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 几何图形动画 - 模拟动态壁纸效果 */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* 新增：像素点闪烁动画 - 模拟屏幕像素 */
+@keyframes pixelGlow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+/* 新增：波纹扩散动画 - 模拟交互效果 */
+@keyframes ripple {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* 新增：渐变流动动画 - 模拟动态背景 */
+@keyframes flowGradient {
+    0% { transform: translateX(-100%) rotate(0deg); }
+    100% { transform: translateX(100vw) rotate(360deg); }
+}
+
+
+
+.hero-geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.geometric-shape {
+    position: absolute;
+    opacity: 0.6;
+}
+
+/* 游戏手柄形状 - 代表游戏工具 */
+.shape-1 {
+    top: 20%;
+    left: 15%;
+    width: 60px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    animation: float 25s ease-in-out infinite;
+    position: relative;
+}
+
+.shape-1::after {
+    content: '🎮';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+/* 游戏模组图标 - 代表Mod工具 */
+.shape-2 {
+    top: 65%;
+    right: 20%;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    animation: pulse 20s ease-in-out infinite;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: rgba(255,255,255,0.4);
+    font-weight: bold;
+}
+
+.shape-2::before {
+    content: '🧩';
+    position: absolute;
+}
+
+/* 输入音效波纹 - 代表输入反馈 */
+.shape-4 {
+    top: 55%;
+    right: 12%;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: expandPulse 2s ease-out infinite;
+    position: relative;
+    opacity: 0.7;
+}
+
+.shape-4::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    animation: expandPulse 2s ease-out infinite;
+    animation-delay: -0.3s;
+}
+
+@keyframes expandPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* 数据流 - 代表输入识别 */
+.shape-6 {
+    top: 72%;
+    right: 15%;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+    animation: none;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+    opacity: 0.8;
+}
+
+
+
+/* 下载进度条 - 代表一键安装 */
+.shape-7 {
+    top: 35%;
+    right: 22%;
+    width: 100px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    animation: pulse 4s ease-in-out infinite;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: monospace;
+    opacity: 0.8;
+    flex-direction: column;
+}
+
+.shape-7::before {
+    content: '⬇ 100%';
+    position: static;
+    margin: 0;
+}
+
+
+
+/* 数据传输点 - 代表云存档 */
+.shape-8 {
+    bottom: 30%;
+    left: 28%;
+    width: 5px;
+    height: 5px;
+    background: rgba(16, 185, 129, 0.9);
+    border-radius: 50%;
+    animation: keyTap 1.4s ease-in-out infinite;
+    box-shadow:
+        25px 0 0 rgba(16, 185, 129, 0.8),
+        50px 0 0 rgba(16, 185, 129, 0.6),
+        0 22px 0 rgba(16, 185, 129, 0.7),
+        25px 22px 0 rgba(16, 185, 129, 0.6),
+        50px 22px 0 rgba(16, 185, 129, 0.5);
+    opacity: 0.9;
+}
+
+@keyframes keyTap {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* 简化的装饰元素 */
+.shape-9 {
+    bottom: 25%;
+    left: 25%;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+    position: relative;
+    opacity: 0.3;
+}
+
+.shape-9::after {
+    content: '⭐';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    opacity: 0.4;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+/* 新增：能量条效果 - 代表游戏状态栏 */
+.shape-10 {
+    bottom: 20%;
+    right: 8%;
+    width: 120px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.shape-10::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.9), rgba(34, 197, 94, 0.9));
+    border-radius: 4px;
+    animation: energyPulse 3s ease-in-out infinite;
+}
+
+@keyframes energyPulse {
+    0%, 100% {
+        width: 60%;
+        opacity: 0.8;
+    }
+    50% {
+        width: 85%;
+        opacity: 1;
+    }
+}
+
+/* 增强的标题样式 - 赛博霓虹风格 */
+/* 增强的标题样式 - 赛博霓虹风格 */
+.hero-title-enhanced {
+    font-size: 6rem; /* 加大字号 */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    color: #FFFFFF;
+    font-weight: 900;
+    letter-spacing: 4px; /* 增加字间距 */
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 移除 gap */
+}
+
+.title-main {
+    color: #FFFFFF;
+    text-shadow:
+        0 0 20px rgba(6, 182, 212, 0.5), /* 青色光晕 */
+        0 0 40px rgba(6, 182, 212, 0.3);
+    position: relative;
+    /* 明显的电竞渐变：上白下青 */
+    background: linear-gradient(180deg, #FFFFFF 20%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+
+.title-main::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    z-index: -1;
+    border-radius: 20px;
+    animation: titleBorder 4s ease-in-out infinite;
+}
+
+@keyframes titleShine {
+    0%, 100% {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 6px 12px rgba(99, 102, 241, 0.4));
+    }
+}
+
+@keyframes titleBorder {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+.subtitle-enhanced {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.subtitle-text {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle-divider {
+    color: rgba(16, 185, 129, 0.6); /* 青色分隔符 */
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+.hero-features{display:flex;justify-content:center;gap:1.5rem;margin:2.5rem 0;flex-wrap:nowrap;max-width:1100px;margin:2.5rem auto;overflow-x:auto;position:relative;z-index:10}
+.hero-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.6); /* 深色半透明背景 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    width: 110px;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* 极细边框 */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-feature:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(16, 185, 129, 0.3); /* Hover时青色边框 */
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.hero-feature:hover::before {
+    opacity: 1;
+}
+
+.hero-feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.hero-feature:hover .hero-feature-icon {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+}
+
+.hero-feature span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.hero-feature:hover span {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* 能量核心背景 */
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%), /* 扫光 */
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.2) 3px), /* 扫描线 */
+        linear-gradient(135deg, #06b6d4, #3b82f6); /* 青蓝底色 */
+    background-size: 200% 100%, 100% 100%, 100% 100%;
+    color: white;
+    padding: 1.5rem 6rem;
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 10;
+    margin-top: 2rem;
+
+    /* 机械切角造型 */
+    clip-path: polygon(
+        20px 0, 100% 0,
+        100% calc(100% - 20px), calc(100% - 20px) 100%,
+        0 100%, 0 20px
+    );
+
+    /* 移除默认边框，改用伪元素模拟外骨骼 */
+    border: none !important;
+    border-radius: 0 !important;
+
+    /* 强烈的全息投影阴影 */
+    filter: drop-shadow(0 10px 20px rgba(6, 182, 212, 0.5));
+}
+
+/* 外骨骼框架 - 模拟金属边框 */
+.cta-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(45deg, transparent 15px, rgba(255,255,255,0.8) 15px, rgba(255,255,255,0.8) 17px, transparent 17px), /* 左上角高光 */
+        linear-gradient(225deg, transparent 15px, rgba(255,255,255,0.8) 15px, rgba(255,255,255,0.8) 17px, transparent 17px); /* 右下角高光 */
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15); /* 内描边 */
+}
+
+/* 机械刻度细节 */
+.cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    height: 60%;
+    transform: translateY(-50%);
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-right: 4px solid rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-primary:hover {
+    transform: translateY(-5px) scale(1.02);
+    filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.8));
+    background-position: 100% 0, 0 0, 0 0; /* 触发扫光动画 */
+    /* 修复：将白色发光改为深色阴影，确保在亮背景下文字清晰锐利 */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes buttonPulse {
+    0%, 100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.5)); }
+    50% { filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.8)); }
+}
+.download-tip {color:#FFFFFF;font-size:0.9rem;margin-top:0.9rem;opacity:0.95;text-shadow:1px 1px 3px rgba(0,0,0,0.7);position:relative;z-index:10}
+
+.features{padding:3rem 2rem;background:var(--light-gray)}
+.section-title{text-align:center;color:#1F2937;margin-bottom:4rem;font-size:2.2rem;font-weight:700;position:relative}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.feature-card{background:white;padding:2rem;border-radius:1rem;text-align:center;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.08);border-top:4px solid var(--primary-color);position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.05),transparent);opacity:0;transition:opacity 0.3s ease}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(37,99,235,0.15)}
+.feature-card h3{margin-bottom:1rem;color:var(--text-color);font-size:1.3rem;font-weight:600;transition:color 0.3s ease}
+.feature-card:hover::before{opacity:1}
+.feature-icon{font-size:2.5rem;margin-bottom:1rem;color:var(--orange-accent);transition:transform 0.3s ease;filter:brightness(1);text-shadow:0 1px 3px rgba(0,0,0,0.3)}
+.feature-card:hover .feature-icon{transform:scale(1.1);color:var(--primary-color)}
+.feature-card p{color:var(--text-secondary);font-size:0.9rem;line-height:1.6;margin-bottom:0}
+.feature-card:hover h3{color:var(--primary-color)}
+.feature-card:hover p{color:var(--text-secondary)}
+.features-download{text-align:center;margin-top:3rem}
+.feature-download{display:inline-block;background:linear-gradient(90deg, #06b6d4, #3b82f6);color:white;padding:1.15rem 4.5rem;border-radius:14px;text-decoration:none;font-size:1.6rem;font-weight:700;transition:all 0.3s ease;box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);min-width:160px;border:none !important;}
+.feature-download:hover{transform:translateY(-4px) scale(1.05);box-shadow: 0 10px 30px rgba(6, 182, 212, 0.6);background:linear-gradient(90deg, #0891b2, #2563eb)}
+.download-desc{color:var(--text-tertiary);font-size:0.9rem;margin-top:0.8rem}
+.testimonials{padding:3rem 2rem;background:white}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;max-width:1200px;margin:0 auto}
+.testimonial-card{background:var(--light-gray);padding:2rem;border-radius:1rem;text-align:center;transition:all 0.3s ease;border:1px solid transparent;position:relative;overflow:hidden}
+.testimonial-card:hover{transform:translateY(-3px);background:white;border-color:var(--border-color);box-shadow:0 8px 20px rgba(37,99,235,0.1)}
+.testimonial-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.05),transparent);opacity:0;transition:opacity 0.3s ease}
+.testimonial-card:hover::before{opacity:1}
+.testimonial-card p{color:var(--text-secondary);font-size:0.9rem;line-height:1.6;margin-bottom:1rem}
+.user-avatar{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.testimonial-card:nth-child(1) .user-avatar{background:var(--primary-color)}
+.testimonial-card:nth-child(2) .user-avatar{background:var(--secondary-color)}
+.testimonial-card:nth-child(3) .user-avatar{background:var(--accent-color)}
+.testimonial-card:nth-child(4) .user-avatar{background:#0ea5e9} /* Sky Blue */
+.testimonial-card:nth-child(5) .user-avatar{background:#2563eb} /* Royal Blue */
+.testimonial-card:nth-child(6) .user-avatar{background:#475569} /* Slate Gray */
+.avatar-letter{color:white;font-size:1.5rem;font-weight:bold}
+.user {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: normal;
+    margin-top: 0.8rem;
+}
+.rating{color:#FFD700;margin-bottom:1rem;font-size:1.2rem}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq{padding:4rem 2rem;background:var(--light-gray);margin:0 auto}
+.faq-item{background:white;margin:0 auto 1rem;border-radius:0.5rem;padding:1.3rem;max-width:800px;cursor:pointer;transition:all 0.3s ease;border-left:4px solid var(--primary-color)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease;opacity:0}
+.faq-item.active{background:#fff;box-shadow:0 4px 15px rgba(37,99,235,0.1)}
+.faq-item.active .faq-answer{max-height:200px;opacity:1;margin-top:1rem;font-size: 1rem;}
+.faq-question{position:relative;padding-right:2rem;font-weight:bold;color:var(--primary-color);font-size:1.1rem}
+.faq-question::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);transition:transform 0.3s ease;color:var(--primary-color);font-size:1.5rem}
+.faq-item.active .faq-question::after{transform:translateY(-50%) rotate(45deg)}
+.faq-item:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(37,99,235,0.1)}
+.download-options{text-align:center;margin-top:3rem;margin-bottom:5rem;display:flex;justify-content:center;gap:6rem;flex-wrap:wrap}
+.download-btn-group{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #06b6d4, #3b82f6); /* 统一青蓝渐变 */
+    color: white;
+    padding: 1.1rem 4rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+    min-width: 180px;
+    border: none !important;
+}
+
+.download-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.6);
+    background: linear-gradient(90deg, #0891b2, #2563eb);
+}
+.download-btn-1{
+    display: inline-block;
+    background: var(--secondary-btn-color);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(117, 117, 117, 0.3);
+    min-width: 150px;
+}
+.download-btn-1:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(117, 117, 117, 0.4);
+    background: #616161;
+}
+.platform-desc {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+
+
+/* 标题背景光效 */
+.title-background-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 250px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(139, 92, 246, 0.25) 0%,
+        rgba(99, 102, 241, 0.15) 40%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: titleGlowPulse 6s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes titleGlowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+
+
+.hero h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.title-decoration {
+    position: relative;
+    display: inline-block;
+}
+
+    </style>
+
+    <!-- 底部跟随栏样式 -->
+    <style>
+    .bottom-follow-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(11, 14, 20, 0.95); /* 深黑背景 */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(6, 182, 212, 0.3); /* 青色边框 */
+        z-index: 1001;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .bottom-follow-bar.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .follow-bar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        height: 60px;
+    }
+
+    .follow-bar-left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .follow-bar-logo {
+
+        height: 45px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .follow-bar-text {
+        color: #FFFFFF;
+        font-size: 25px;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .follow-bar-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .follow-download-btn {
+        background: linear-gradient(90deg, #06b6d4, #3b82f6);
+        color: white;
+        padding: 13px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 17px;
+        box-shadow: 0 4px 18px rgba(6, 182, 212, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none !important;
+    }
+
+    .follow-download-btn:hover {
+        background: linear-gradient(90deg, #0891b2, #2563eb);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(6, 182, 212, 0.6);
+    }
+
+    .follow-close-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .follow-close-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .follow-bar-content {
+            padding: 10px 15px;
+            height: 55px;
+        }
+
+        .follow-bar-text {
+            font-size: 16px;
+        }
+
+        .follow-download-btn {
+            padding: 6px 16px;
+            font-size: 13px;
+        }
+    }
+
+    /* 页面内容底部间距，避免被跟随栏遮挡 */
+    body {
+        padding-bottom: 80px;
+    }
+
+
+
+    /* 按钮专业化样式 */
+    .cta-primary,
+    .download-btn,
+    .feature-download {
+        border-radius: 14px !important;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        border: 3px solid rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* 普通下载按钮样式 */
+    .download-btn-1 {
+        border-radius: 12px !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        font-weight: 700;
+        border: 3px solid rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /* 底部跟随栏按钮样式 */
+    .follow-download-btn {
+        border-radius: 12px !important;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        border: 2px solid rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .follow-download-btn::before {
+        content: '⚡';
+        margin-right: 6px;
+        animation: lightning 1.2s ease-in-out infinite;
+    }
+
+    @keyframes lightning {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+    }
+
+    /* 特性卡片专业化 */
+    .feature-card {
+        border-radius: 8px !important;
+        border: 2px solid var(--border-color);
+    }
+
+
+    </style>
+
+
+
+    <!-- 公共头部样式开始 -->
+    <style>
+        .ai-header {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            background: #cfe2f9;
+        }
+
+        .ai-header-wrapper {
+            width: 1167px;
+            height: 38px;
+            margin: 0 auto;
+            padding: 24px 0 18px 0;
+        }
+
+        .ai-header .nav-search {
+            float: right;
+            width: 600px;
+            height: 40px;
+        }
+
+        .ai-header .nav-search .nav {
+            width: 360px;
+        }
+
+        .ai-header .nav-search .nav .nav-item {
+            float: left;
+            width: 72px;
+            line-height: 34px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            opacity: 1;
+        }
+
+        .ai-header .nav-search .nav .nav-item:hover  {
+            opacity: 0.8;
+        }
+
+        .ai-header .top-searchBox {
+            position: relative;
+            width: 204px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .ai-header .searchBar {
+            width: 100%;
+            height: 34px;
+            position: relative;
+            background-color: #fff;
+        }
+
+        .ai-header .searchBar input {
+            width: 131px;
+            height: 34px;
+            line-height: 34px;
+            padding-left: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            border: 0px solid #fff;
+        }
+
+        .ai-header .searchBar input:hover {
+            border-color: #fff;
+        }
+
+        .ai-header .searchBar input:focus {
+            outline: none;
+        }
+
+        .ai-header .searchBar button {
+            width: 64px;
+            height: 34px;
+            line-height: 34px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            background-color: #00A0E9;
+            color: #fff;
+            padding: 0 0 0 9px;
+        }
+
+        .ai-header .searchBar button:hover {
+            background-color: #0088D1;
+        }
+
+        .ai-header .searchBar button:active {
+            background-color: #0077BE;
+        }
+
+        .ai-header .searchBar button:before {
+            font-size: 18px;
+        }
+
+        .ai-header .searchBar button img {
+            float: left;
+            width: 14px;
+            margin: 10px 5px 0 0;
+        }
+
+        .ai-header .searchBar button .search-text {
+            float: left;
+            font-size: 14px;
+        }
+
+        .ai-footer {
+            width: 100%;
+            line-height: 30px;
+            text-align: center;
+            padding: 10px 0 100px 0;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+    <!-- 公共头部结束 -->
+        <style id="custom-header-color">
+        .ai-header {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+        }
+    </style>
+
+
+
+    <script>
+        // 记录页面开始加载的时间戟
+        var globalStartTime = new Date().getTime();
+
+        window._agl = window._agl || [];
+        (function () {
+            _agl.push(
+                ['production', '_f7L2XwGXjyszb4d1e2oxPybgD']
+            );
+            (function () {
+                var agl = document.createElement('script');
+                agl.type = 'text/javascript';
+                agl.async = true;
+                agl.src = 'https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(agl, s);
+            })();
+        })();
+    </script>
+    <!-- 头部脚本结束 -->
+
+
+
+    <!-- 头部脚本开始 -->
+    <script>
+        // 记录页面开始加载的时间戟
+        var globalStartTime = new Date().getTime();
+
+        window._agl = window._agl || [];
+        (function () {
+            _agl.push(
+                ['production', '_f7L2XwGXjyszb4d1e2oxPybgD']
+            );
+            (function () {
+                var agl = document.createElement('script');
+                agl.type = 'text/javascript';
+                agl.async = true;
+                agl.src = 'https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(agl, s);
+            })();
+        })();
+    </script>
+    <!-- 头部脚本结束 -->
+
+</head>
+<body>
+
+    <!-- 公共头部元素开始 -->
+    <div class="ai-header">
+        <div class="ai-header-wrapper">
+            <div id="J_seoHeader">
+            </div>
+            <img id="J_headerRightLogo" src="static/picture/duba_logo.png" alt="{{ sem.0.title }}" class="duba-logo right">
+            <div id="J_navSearch" class="nav-search">
+                <div class="nav left">
+                    <ul class="nav-list" id="J_navList"> </ul>
+                </div>
+                <div class="top-searchBox right">
+                    <div class="searchBar">
+                    <input type="text" class="search" id="J_search" autocomplete="off" placeholder="请输入软件名称">
+                    <button class="iconfont icon-search" id="J_searchBtn">
+                        <img src="static/picture/search.png" alt="{{ sem.0.title }}">
+                            <span class="search-text">搜索</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公共头部元素结束 -->
+
+
+
+    <header class="hero">
+        <!-- 简洁背景动效 -->
+        <div class="hero-geometric-bg">
+            <div class="geometric-shape shape-1"></div>
+            <div class="geometric-shape shape-2"></div>
+            <div class="geometric-shape shape-9"></div>
+        </div>
+
+        <div class="title-decoration">
+            <div class="title-background-effect"></div>
+            <h1 class="hero-title-enhanced">
+                <span class="title-main">新手盒子</span>
+            </h1>
+            <p class="subtitle-enhanced">
+                <span class="subtitle-text">专业电竞Mod工具</span>
+                <span class="subtitle-divider">|</span>
+                <span class="subtitle-text">海量资源一键安装</span>
+                <span class="subtitle-divider">|</span>
+                <span class="subtitle-text">云端存档同步</span>
+            </p>
+        </div>
+        <a href="" class="cta-primary J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-1" data-report-click="" data-report-show="" data-down="true">立即下载</a>
+
+        <p class="download-tip">通过毒霸软件管家官方渠道下载，享受高效安全的下载服务</p>
+        <div class="hero-features">
+            <a href="" class="hero-feature J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">
+                <div class="hero-feature-icon">📦</div>
+                <span>Mod整合包</span>
+            </a>
+            <a href="" class="hero-feature J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">
+                <div class="hero-feature-icon">⚡</div>
+                <span>一键安装</span>
+            </a>
+            <a href="" class="hero-feature J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">
+                <div class="hero-feature-icon">☁️</div>
+                <span>云存档</span>
+            </a>
+            <a href="" class="hero-feature J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">
+                <div class="hero-feature-icon">🛠️</div>
+                <span>模组管理</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title">专业游戏Mod平台，提升你的游戏体验</h2>
+        <div class="features-grid">
+
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">🎮</div>
+                <h3>海量游戏资源</h3>
+                <p>汇聚热门单机游戏Mod资源，涵盖各类游戏类型，满足不同玩家的个性化需求。</p>
+            </div>
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">⚡</div>
+                <h3>一键快速安装</h3>
+                <p>智能化安装系统，自动识别游戏路径，一键完成Mod安装，让您轻松享受游戏乐趣。</p>
+            </div>
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">📦</div>
+                <h3>整合包管理</h3>
+                <p>提供精心整理的Mod整合包，兼容性测试完善，确保稳定的游戏体验。</p>
+            </div>
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">☁️</div>
+                <h3>云端存档同步</h3>
+                <p>支持游戏存档云端备份与同步，多设备无缝切换，再也不用担心存档丢失。</p>
+            </div>
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">🛠️</div>
+                <h3>专业模组管理</h3>
+                <p>提供便捷的模组管理功能，支持批量安装、卸载、更新，轻松管理您的游戏内容。</p>
+            </div>
+            <div class="feature-card lazy-load">
+                <div class="feature-icon">🌟</div>
+                <h3>创作者社区</h3>
+                <p>连接优秀的Mod创作者，发现精品内容，支持创作者发布作品，共建游戏社区生态。</p>
+            </div>
+
+        </div>
+        <div class="features-download">
+            <a href="" class="feature-download J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">立即下载</a>
+            <p class="download-desc">通过毒霸软件管家官方渠道下载，享受高效安全的下载服务</p>
+        </div>
+    </section>
+
+
+
+    <section class="testimonials">
+        <h2 class="section-title">用户这样说</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">张</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>作为魔兽世界资深玩家，新手盒子的插件管理功能太实用了，一键安装更新，再也不用手动折腾了！</p>
+                <div class="user">张先生 - 游戏玩家</div>
+            </div>
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">李</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>新手盒子的Mod整合包质量很高，兼容性测试很到位，安装后游戏运行稳定，体验提升明显。</p>
+                <div class="user">李女士 - 单机游戏爱好者</div>
+
+            </div>
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">王</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>云存档功能太棒了！换电脑玩游戏再也不用担心存档问题，多设备同步很方便。</p>
+                <div class="user">王同学 - 学生玩家</div>
+            </div>
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">陈</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>作为Mod制作者，新手盒子提供了很好的发布平台，帮助我的作品被更多玩家发现。</p>
+                <div class="user">陈先生 - Mod创作者</div>
+            </div>
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">刘</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>界面设计简洁直观，操作很容易上手，就算是游戏新手也能快速找到想要的内容。</p>
+                <div class="user">刘女士 - 休闲玩家</div>
+            </div>
+            <div class="testimonial-card lazy-load">
+                <div class="user-avatar">
+                    <span class="avatar-letter">周</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>WCL数据同步和伤害统计功能很专业，帮助我分析团队表现，提升副本效率。</p>
+                <div class="user">周先生 - 公会会长</div>
+            </div>
+        </div>
+    </section>
+    <div class="download-options">
+        <div class="download-btn-group">
+            <a href="" class="download-btn-1 J_commonDown" download="" data-agl-cvt="6" status="1" id="download-3" data-report-click="" data-report-show="" data-down="true">普通下载</a>
+            <p class="platform-desc">直接下载安装，快速开始体验</p>
+        </div>
+        <div class="download-btn-group">
+            <a href="" class="download-btn J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-2" data-report-click="" data-report-show="" data-down="true">安全下载</a>
+            <p class="platform-desc">通过毒霸软件管家官方渠道下载，享受高效安全的下载服务</p>
+        </div>
+    </div>
+    <section class="faq">
+        <h2 class="section-title">常见问题</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">新手盒子是什么？</div>
+                <div class="faq-answer">新手盒子是一款集Mod整合包下载、模组管理、一键安装与云存档于一体的单机游戏Mod平台，同时提供魔兽世界插件管理及实时伤害排行榜功能。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">新手盒子支持哪些游戏？</div>
+                <div class="faq-answer">新手盒子支持多款热门单机游戏的Mod管理，包括各类RPG、动作、策略游戏，同时专门为魔兽世界提供插件管理和WCL数据统计功能。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何使用一键安装功能？</div>
+                <div class="faq-answer">新手盒子会自动检测您的游戏安装路径，选择想要的Mod或插件后，点击一键安装即可自动完成安装配置，无需手动操作文件。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">云存档功能如何使用？</div>
+                <div class="faq-answer">登录新手盒子账户后，您的游戏存档会自动备份到云端，在不同设备上登录同一账户即可同步存档，确保游戏进度不丢失。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">新手盒子的Mod资源安全吗？</div>
+                <div class="faq-answer">新手盒子所有Mod资源均经过安全检测和兼容性测试，确保无病毒无冲突，为用户提供安全可靠的游戏增强体验。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">是否支持创作者发布内容？</div>
+                <div class="faq-answer">是的，新手盒子为Mod创作者提供便捷的发布平台，支持作品展示、下载统计、用户反馈等功能，帮助优质内容触达更多玩家。</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+const lazyLoad = () => {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    document.querySelectorAll('.lazy-load').forEach(el => observer.observe(el));
+};
+
+// FAQ手风琴效果
+document.addEventListener('DOMContentLoaded', () => {
+    // 初始化懒加载
+    lazyLoad();
+
+    // FAQ手风琴效果
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // 关闭其他打开的FAQ项
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // 切换当前项的状态
+            item.classList.toggle('active');
+        });
+    });
+});
+    </script>
+
+    <!-- 底部跟随栏 -->
+    <div class="bottom-follow-bar" id="bottomFollowBar">
+        <div class="follow-bar-content">
+            <div class="follow-bar-left">
+
+                <span class="follow-bar-text">新手盒子</span>
+            </div>
+            <div class="follow-bar-right">
+                <a href="" class="follow-download-btn J_downloadUrlAll J_ocpcBtn" download="" data-agl-cvt="6" status="1" id="download-4" data-report-click="" data-report-show="" data-down="true">立即下载</a>
+                <div class="follow-close-btn" onclick="hideFollowBar()">×</div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function hideFollowBar() {
+        document.getElementById('bottomFollowBar').style.display = 'none';
+        document.body.style.paddingBottom = '20px';
+    }
+
+    // 页面滚动时显示/隐藏跟随栏
+    let lastScrollTop = 0;
+    const showThreshold = 300; // 滚动300像素后显示跟随栏
+
+    window.addEventListener('scroll', function() {
+        const followBar = document.getElementById('bottomFollowBar');
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // 当滚动超过阈值时显示跟随栏
+        if (currentScroll > showThreshold) {
+            followBar.classList.add('show');
+        } else {
+            followBar.classList.remove('show');
+        }
+
+        // 向下滚动时稍微增强阴影效果
+        if (currentScroll > lastScrollTop && currentScroll > showThreshold) {
+            followBar.style.boxShadow = '0 -6px 25px rgba(44, 62, 80, 0.4)';
+        } else if (currentScroll > showThreshold) {
+            followBar.style.boxShadow = '0 -4px 20px rgba(44, 62, 80, 0.3)';
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+    </script>
+
+
+
+    <!-- 公共底部开始 -->
+    <div class="ai-footer">
+        <div id="J_seoFooter">
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="static/js/infoc.b.min.js"></script>
+    <script type="text/javascript" src="static/js/setDownHost.js"></script>
+    <script type="text/javascript" src="static/js/setDown.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/footerHeader230505.js"></script>
+    <!-- 公共底部结束 -->
+
+</body></html>
